@@ -1,0 +1,6 @@
+{
+    "editor.inlineCompletionsAccessibilityVerbose": false,
+    "editor.inlineSuggest.edits.allowCodeShifting": "always",
+    "editor.inlineSuggest.edits.renderSideBySide": "never",
+    "editor.inlineSuggest.enabled": false
+}
