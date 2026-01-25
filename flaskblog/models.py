@@ -1,10 +1,6 @@
-from flask import Flask
 from datetime import datetime
 from flask_sqlalchemy import SQLAlchemy
-from forms import RegistrationForm, LoginForm
-import app
-
-db = SQLAlchemy(app)
+from flaskblog import db  
 
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -12,7 +8,7 @@ class User(db.Model):
     email=db.Column(db.String(20), unique=True, nullable=False)
     image_file = db.Column(db.String(20), nullable=False, default="default.jpg")  
     password = db.Column(db.String(60), nullable=False)
-    posts = db.relationship("Post", backref="author", lazy=True)
+    posts = db.relationship("Post", backref="author", lazy=True) 
     
     def __repr__(self):
         return f"User('{self.username}, {self.email}, {self.image_file})"
@@ -27,17 +23,5 @@ class Post(db.Model):
 
     def __repr__ (self):
         return f'Post("{self.title}", "{self.posted}")'
-
-
-posts = [
-    {
-        'author': 'corey schafer',
-        'title': 'blog post'
-    },
-    { 
-        'author': 'johnny',
-        'title': 'blog post 2'
-    }
-]
 
 
