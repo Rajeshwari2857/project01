@@ -3,6 +3,7 @@ from flask import render_template, url_for, redirect, flash
 from flaskblog.models import User, Post 
 from flaskblog import app
 
+
 posts = [
     {
         'author': 'corey schafer',
